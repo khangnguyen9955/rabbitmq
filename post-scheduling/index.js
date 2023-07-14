@@ -53,7 +53,7 @@ async function handleScheduledTweets() {
 }
 
 async function run() {
-  console.log(process.argv[0])
+  console.log(process.argv[0]);
   const tweet = process.argv[2]; // Tweet stores the third argument passed from the terminal
   const time = process.argv[3]; // Time stores the fourth argument passed from the terminal
 
@@ -97,7 +97,7 @@ async function run() {
     const message = Buffer.from(
       JSON.stringify({
         tweet,
-      }),
+      })
     );
 
     // Calculate the delay for the message
@@ -108,7 +108,7 @@ async function run() {
       deliveryMode: 2,
       mandatory: true,
       headers: {
-        "x-delay": delayInMilliseconds, // Specifies the duration of delay in milliseconds 
+        "x-delay": delayInMilliseconds, // Specifies the duration of delay in milliseconds
       },
     });
     console.log("Published message to queue");
